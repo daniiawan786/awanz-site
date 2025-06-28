@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awanz.pk - Quality Products Delivered to Your Doorstep</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #25D366;
+            --accent: #FF6B35;
+            --dark: #333;
+            --light: #f8f9fa;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 5%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .whatsapp-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 221, 148, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--light);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .product-desc {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .order-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .order-btn:hover {
+            background: #000000;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 4rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        .about h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 280px;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .contact-method h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            text-align: center;
+            color: #555;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #555;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .floating-whatsapp i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+                margin: 1rem 0;
+            }
+            
+            .hero {
+                padding: 4rem 5%;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about {
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923112209516" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Awanz<span>.pk</span></a>
+            <div class="nav-links">
+                <a href="#products">Products</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/923112209516" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to <span>Awanz.pk</span> – Shop & Order via WhatsApp!</h1>
+            <p>Discover our premium collection of products and order directly through WhatsApp for a seamless shopping experience.</p>
+            <a href="https://wa.me/923112209516" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Start Shopping Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+           <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+           <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+           <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+           <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smartphone" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Latest Smartphone</h3>
+                    <p class="product-desc">Powerful processor, stunning display, and professional-grade camera.</p>
+                    <p class="product-price">Rs. 39,999</p>
+                    <a href="https://wa.me/923112209516?text=I'm%20interested%20in%20Latest%20Smartphone" class="order-btn">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about">
+            <h2 class="section-title">About Us</h2>
+            <p>We are a trusted online store delivering quality products at your doorstep. At Awanz.pk, we carefully curate our collection to bring you the best products at competitive prices. Our mission is to provide a seamless shopping experience with easy WhatsApp ordering and prompt delivery across Pakistan.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <div class="contact-details">
+                    <p>+92 311 2209516</p>
+                    <p>Available 24/7</p>
+                    <a href="https://wa.me/923112209516" class="whatsapp-btn" style="margin-top: 1.5rem;">
+                        <i class="fab fa-whatsapp"></i> Message Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <div class="contact-details">
+                    <p>info@awanz.pk</p>
+                    <p>orders@awanz.pk</p>
+                    <p>Response within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <div class="contact-details">
+                    <p>Opp Gul Tijarah</p>
+                    <p>Karachi, Pakistan</p>
+                    <p>Delivery nationwide</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Awanz<span>.pk</span></div>
+            <p>Your trusted partner for quality products and seamless shopping experience</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">© 2025 Awanz.pk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Product card animation on scroll
+        const productCards = document.querySelectorAll('.product-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        productCards.forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
